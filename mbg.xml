@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+
+	<context id="DB2Tables" targetRuntime="MyBatis3">
+		<commentGenerator>
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+		<!-- 配置数据库连接 -->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://119.23.109.51:3306/taotao" 
+			userId="root"
+			password="123456">
+		</jdbcConnection>
+
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<!-- 指定javaBean生成的位置 -->
+		<javaModelGenerator targetPackage="com.cn.pojo"
+			targetProject=".\src\main\java">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<!--指定sql映射文件生成的位置 -->
+		<sqlMapGenerator targetPackage="com.cn.mapping" 
+			targetProject=".\src\main\java">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+		<!-- 指定dao接口生成的位置，mapper接口 -->
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.cn.dao" 
+			targetProject=".\src\main\java">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+
+
+		<!-- table指定每个表的生成策略 -->
+		 <table tableName="tb_content" domainObjectName="TbContent"></table> 
+		 <table tableName="tb_content_category" domainObjectName="TbContentCategory"></table> 
+		 <table tableName="tb_item" domainObjectName="TbItem"></table> 
+		 <table tableName="tb_item_cat" domainObjectName="TbItemCat"></table> 
+		 <table tableName="tb_item_desc" domainObjectName="TbItemDesc"></table> 
+		 <table tableName="tb_item_param" domainObjectName="TbItemParam"></table> 
+		 <table tableName="tb_item_param_item" domainObjectName="TbItemParamItem"></table> 
+		 <table tableName="tb_order" domainObjectName="TbOrder"></table> 
+		 <table tableName="tb_order_item" domainObjectName="TbOrderItem"></table> 
+		 <table tableName="tb_order_shipping" domainObjectName="TbOrderShipping"></table> 
+		 <table tableName="tb_user" domainObjectName="TbUser"></table> 
+		  
+		
+	</context>
+</generatorConfiguration>
